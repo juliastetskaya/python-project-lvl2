@@ -12,6 +12,7 @@ gendiff="gendiff.scripts.gendiff:main"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pytest = "^6.2.5"
 
 [tool.poetry.dev-dependencies]
 wemake-python-styleguide = "^0.15.3"
