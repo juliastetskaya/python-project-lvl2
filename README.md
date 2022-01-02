@@ -6,4 +6,6 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/ffe87b1eecf3197ea254/test_coverage)](https://codeclimate.com/github/juliastetskaya/python-project-lvl2/test_coverage)
 
 ### Example
-https://asciinema.org/a/6cz4NRavmFfd6zuP2ynnIDcVq
+Step 3 https://asciinema.org/a/6cz4NRavmFfd6zuP2ynnIDcVq
+
+Step 5 https://asciinema.org/a/OW5zoUPQHnOXWIiAlzNGKVsaQ
