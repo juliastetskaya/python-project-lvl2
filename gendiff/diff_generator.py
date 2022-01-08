@@ -1,8 +1,8 @@
 from os.path import splitext
 
 from gendiff.diff_builder import build_diff
+from gendiff.formatters.formatter import get_formatter
 from gendiff.loaders import get_loader
-from gendiff.stylish import stylish
 
 
 def read_file(filepath):
@@ -19,10 +19,11 @@ def get_data(filepath):
     raise ValueError
 
 
-def generate_diff(first_file, second_file, formatter=stylish):
+def generate_diff(first_file, second_file, style):
     first_dict = get_data(first_file)
     second_dict = get_data(second_file)
 
     diff = build_diff(first_dict, second_dict)
+    formatter = get_formatter(style)
 
     return formatter(diff)
