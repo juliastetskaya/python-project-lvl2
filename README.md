@@ -9,3 +9,5 @@
 Step 3 https://asciinema.org/a/6cz4NRavmFfd6zuP2ynnIDcVq
 
 Step 5 https://asciinema.org/a/OW5zoUPQHnOXWIiAlzNGKVsaQ
+
+Step 6 https://asciinema.org/a/b7ONFi2A27FqertUdwURzcOsK
