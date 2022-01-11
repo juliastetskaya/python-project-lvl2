@@ -16,15 +16,22 @@ HANDLERS = MappingProxyType({
 def format_value(value):
     if isinstance(value, dict):
         return '[complex value]'
-    return CORRECT_VALUES.get(value) or "'{0}'".format(value)
+
+    elif value is None or isinstance(value, bool):
+        return CORRECT_VALUES.get(value)
+
+    elif isinstance(value, str):
+        return "'{0}'".format(value)
+
+    return value
 
 
-def plain(diff, start_key=''):
+def get_plain(diff, start_key=''):
     lines = []
     for type_name, key, value in diff:
-        handler = HANDLERS[type_name]
+        handler = HANDLERS.get(type_name)
         full_key = '{0}.{1}'.format(start_key, key) if start_key else key
-        line = handler(full_key, value, plain)
+        line = handler(full_key, value, get_plain)
         lines.append(line)
 
     return '\n'.join(filter(lambda item: item, lines))

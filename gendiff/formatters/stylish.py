@@ -47,15 +47,18 @@ def to_string(value, indent):
     if isinstance(value, dict):
         return get_styled_dict(value, indent)
 
-    return CORRECT_VALUES.get(value) or value
+    elif value is None or isinstance(value, bool):
+        return CORRECT_VALUES.get(value)
+
+    return value
 
 
-def stylish(diff, current_indent=''):
+def get_stylish(diff, current_indent=''):
     lines = []
     for type_name, key, value in diff:
-        handler = HANDLERS[type_name]
+        handler = HANDLERS.get(type_name)
         indent = current_indent + INDENT
-        line = handler(key, value, indent, stylish)
+        line = handler(key, value, indent, get_stylish)
         lines.append(line)
 
     return '{{\n{0}\n{1}}}'.format('\n'.join(lines), current_indent)
